@@ -1,0 +1,16 @@
+---
+all:
+  hosts:
+    admin.prince-lab.com:
+      ansible_port: 22
+      ansible_host: 192.168.220.130
+    children:
+      webservers:
+        hosts:
+          host1.prince-lab.com
+          host2.prince-lab.com
+        vars:
+          http_port: 8080
+      dbservers:
+        hosts:
+          db[1:2].prince-lab.com
